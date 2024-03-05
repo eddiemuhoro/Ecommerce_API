@@ -1,0 +1,12 @@
+# Exclude all files with .log extension
+*.log
+
+# Exclude the directory named "node_modules"
+node_modules/
+
+# Exclude all files and directories that start with "temp_"
+temp_*/
+
+# Exclude all files with .tmp or .bak extension
+*.tmp
+*.bak

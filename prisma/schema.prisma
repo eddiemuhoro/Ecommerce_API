@@ -1,0 +1,166 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id            String         @id @default(cuid())
+  name          String
+  email         String         @unique
+  phone         String         @default("")
+  password      String
+  product       product[]
+  review        review[]
+  code          String
+  isVerified    Boolean        @default(false)
+  bio           String         @default("")
+  profile_pic   String         @default("")
+  cover_pic     String         @default("")
+  location      String         @default("")
+  usellaReviews usellaReviews?
+  followers     follow[]       @relation("followers")
+  following     follow[]       @relation("following")
+  order         order[]
+  history       history[]
+  cart          cart[]
+  favourite     favourite[]
+}
+
+model follow {
+  id          String @id @default(uuid())
+  followerId  String
+  followingId String
+  follower    user   @relation("followers", fields: [followerId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  following   user   @relation("following", fields: [followingId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  // Additional constraint to ensure that follower and following are different
+
+  // Additional constraints to ensure uniqueness of follower-following pairs
+  @@unique([followerId, followingId])
+  @@unique([followingId, followerId])
+  @@index([followerId])
+  @@index([followingId])
+}
+
+model product {
+  id           String   @id @default(cuid())
+  name         String
+  quantity     Int
+  category     Category @default(OTHERS)
+  price        Int
+  location     String
+  description  String
+  images       String[] @default(["https://firebasestorage.googleapis.com/v0/b/apt-rite-346310.appspot.com/o/about04.png?alt=media&token=f80825e5-3be5-4e17-817b-cda37d213d29"])
+  seller_id    String
+  seller_email String
+  seller_phone String   @default("")
+  seller_name  String
+  rating       Int      @default(0)
+  status       Status   @default(AVAILABLE)
+  seller       user     @relation(fields: [seller_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  order        order[]
+}
+
+model cart {
+  id       String @id @default(cuid())
+  buyer_id String
+  buyer    user   @relation(fields: [buyer_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+}
+
+model favourite {
+  id       String @id @default(cuid())
+  buyer_id String
+  buyer    user   @relation(fields: [buyer_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+}
+
+model order {
+  id            String        @id @default(cuid())
+  buyer_id      String
+  buyer         user          @relation(fields: [buyer_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  order_status  OrderStatus   @default(PENDING)
+  product_id    String
+  seller_id     String
+  quantity      Int
+  price         Int
+  paymentStatus PaymentStatus @default(UNPAID)
+  location      String
+  product       product       @relation(fields: [product_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+}
+
+model payment {
+  id              String   @id @default(cuid())
+  phone           BigInt
+  amount          Int
+  transactionDate BigInt
+  dateCreated     DateTime @default(now())
+}
+
+model review {
+  id           String @id @default(cuid())
+  sender_name  String
+  sender_image String
+  user_id      String
+  rating       Int
+  comment      String
+  sender_email String
+  user         user   @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+}
+
+model usellaReviews {
+  id      String @id @default(cuid())
+  rating  Int
+  comment String
+  user    user   @relation(fields: [id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+}
+
+model history {
+  id           String   @id @default(cuid())
+  name         String
+  quantity     Int
+  category     Category @default(OTHERS)
+  price        Int
+  location     String
+  description  String
+  images       String[] @default([])
+  belongsTo    String
+  seller_id    String
+  seller_email String
+  seller_phone String   @default("")
+  seller_name  String
+  rating       Int      @default(0)
+  sold         Boolean  @default(false)
+  status       Status   @default(AVAILABLE)
+  owner        user     @relation(fields: [belongsTo], references: [id], onUpdate: Cascade, onDelete: Cascade)
+}
+
+enum Category {
+  ELECTRONICS
+  FASHION
+  HOME
+  BEAUTY
+  SPORTS
+  BOOKS
+  OTHERS
+  HEALTH
+}
+
+enum PaymentStatus {
+  UNPAID
+  PAID
+}
+
+enum Status {
+  AVAILABLE
+  PENDING
+  SOLD
+}
+
+enum OrderStatus {
+  PENDING
+  ACCEPTED
+  DELIVERED
+}

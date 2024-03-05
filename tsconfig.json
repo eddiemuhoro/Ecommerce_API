@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "./dist/",
+    "rootDir": "./src/",
+    "strict": true,
+    "lib": ["ES2016", "ESNext.AsyncIterable"],
+    "esModuleInterop": true,
+    "target": "ESNext",
+    // "allowImportingTsExtensions": true,
+    "noEmit" :false,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true
+
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["node_modules"]
+
+ 
+}
