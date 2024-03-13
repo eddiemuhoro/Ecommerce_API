@@ -16,7 +16,7 @@ model user {
   product       product[]
   review        review[]
   code          String
-  isVerified    Boolean    @default(false)
+  isVerified    Boolean    @default(true)
   bio           String     @default("")
   profile_pic   String     @default("")
   cover_pic     String     @default("")
