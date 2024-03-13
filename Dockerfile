@@ -2,7 +2,7 @@ FROM node:18-alpine
 
 ENV email=usellacompany@gmail.com \
     password=lhqnekuevquucqfr \
-    DATABASE_URL=postgresql://postgres:3bCeb11a1g6c5aBCgCdEAg3EAACfA1F-@postgres.railway.internal:5432/railway\
+    DATABASE_URL=postgresql://postgres://dtnyikoh:0kVTCSqbwKEWZgTRu9AA2Hhk-rGcFuqV@ziggy.db.elephantsql.com/dtnyikoh \
     PORT=3000
 
 RUN npm install -g pnpm
