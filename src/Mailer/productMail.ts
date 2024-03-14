@@ -76,7 +76,7 @@ export const productPostedEmail = async (
                 <h5 style="font-weight:normal; font-size: 16px; margin-top: 8px; margin-bottom: 5px;">Warm Regards,</a></h5>
                 <img
                     src="https://firebasestorage.googleapis.com/v0/b/apt-rite-346310.appspot.com/o/unnamed(2).png?alt=media&token=9514f497-0e09-467c-8e9f-58bc6d830b1e">
-                <h5 style="font-weight:normal; font-size: 16px; margin-bottom: 0px;margin-top: 8px;">Usella Kenya Team</a>
+                <h5 style="font-weight:normal; font-size: 16px; margin-bottom: 0px;margin-top: 8px;">Usella Coventry Team</a>
                 </h5>
             </div>
         </div>
@@ -185,7 +185,7 @@ export const verifyEmail = async (
                   <h5 style="font-weight:normal; font-size: 16px; margin-top: 8px; margin-bottom: 5px;">Warm Regards,</a></h5>
                   <img
                       src="https://firebasestorage.googleapis.com/v0/b/apt-rite-346310.appspot.com/o/unnamed(2).png?alt=media&token=9514f497-0e09-467c-8e9f-58bc6d830b1e">
-                  <h5 style="font-weight:normal; font-size: 16px; margin-bottom: 0px;margin-top: 8px;">Usella Kenya Team</a>
+                  <h5 style="font-weight:normal; font-size: 16px; margin-bottom: 0px;margin-top: 8px;">Usella Coventry Team</a>
                   </h5>
       
               </div>
@@ -468,7 +468,7 @@ export const orderCreatedEmail = async (
                   <h5 style="font-weight:normal; font-size: 16px; margin-top: 8px; margin-bottom: 5px;">Warm Regards,</a></h5>
                   <img
                       src="https://firebasestorage.googleapis.com/v0/b/apt-rite-346310.appspot.com/o/unnamed(2).png?alt=media&token=9514f497-0e09-467c-8e9f-58bc6d830b1e">
-                  <h5 style="font-weight:normal; font-size: 16px; margin-bottom: 0px;margin-top: 8px;">Usella Kenya Team</a>
+                  <h5 style="font-weight:normal; font-size: 16px; margin-bottom: 0px;margin-top: 8px;">Usella Coventry Team</a>
                   </h5>
       
               </div>
@@ -580,7 +580,7 @@ export const orderConfirmEmail = async (
                 <h5 style="font-weight:normal; font-size: 16px; margin-top: 8px; margin-bottom: 5px;">Warm Regards,</a></h5>
                 <img
                     src="https://firebasestorage.googleapis.com/v0/b/apt-rite-346310.appspot.com/o/unnamed(2).png?alt=media&token=9514f497-0e09-467c-8e9f-58bc6d830b1e">
-                <h5 style="font-weight:normal; font-size: 16px; margin-bottom: 0px;margin-top: 8px;">Usella Kenya Team</a>
+                <h5 style="font-weight:normal; font-size: 16px; margin-bottom: 0px;margin-top: 8px;">Usella Coventry Team</a>
                 </h5>
     
             </div>
@@ -698,7 +698,7 @@ export const orderDeliveredEmail = async (
                   <h5 style="font-weight:normal; font-size: 16px; margin-top: 8px; margin-bottom: 5px;">Warm Regards,</a></h5>
                   <img
                       src="https://firebasestorage.googleapis.com/v0/b/apt-rite-346310.appspot.com/o/unnamed(2).png?alt=media&token=9514f497-0e09-467c-8e9f-58bc6d830b1e">
-                  <h5 style="font-weight:normal; font-size: 16px; margin-bottom: 0px;margin-top: 8px;">Usella Kenya Team</a>
+                  <h5 style="font-weight:normal; font-size: 16px; margin-bottom: 0px;margin-top: 8px;">Usella Coventry Team</a>
                   </h5>
       
               </div>
