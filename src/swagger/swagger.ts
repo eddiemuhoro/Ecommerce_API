@@ -4,9 +4,9 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Usella',
+      title: 'Shop',
       version: '1.0.0',
-      description: 'welcome to usella, where send hand good has value'
+      description: 'welcome to shop, where send hand good has value'
     },
     paths: {
       // Users routes
@@ -22,7 +22,7 @@ const options = {
                   properties: {
                     email: {
                       type: 'string',
-                      example: 'emilio113kariuki@gmail.com'
+                      example: 'eddiemuhoro@gmail.com'
                     },
                     password: {
                       type: 'string',
@@ -53,11 +53,11 @@ const options = {
                   properties: {
                     name: {
                       type: 'string',
-                      example: 'Emilio Kariuki'
+                      example: 'Edwin Muhoro'
                     },
                     email: {
                       type: 'string',
-                      example: 'emilio113kariuki@gmail.com'
+                      example: 'eddiemuhoro@gmail.com'
                     },
 
                     password: {
@@ -77,65 +77,65 @@ const options = {
         }
       },
 
-      '/users/reset/password/{email}/{password}': {
-        put: {
-          tags: ['User'],
-          parameters: [
-            {
-              name: 'email',
-              in: 'path',
-              description: 'The user email',
-              required: true,
-              schema: {
-                type: 'string',
-                required: true,
-                description: 'The user email'
-              }
-            },
-            {
-              name: 'password',
-              in: 'path',
-              description: 'The user password',
-              required: true,
-              schema: {
-                type: 'string',
-                required: true,
-                description: 'The user password'
-              }
-            }
-          ],
-          responses: {
-            200: {
-              description: 'User password reset successfully'
-            }
-          }
-        }
-      },
+      // '/users/reset/password/{email}/{password}': {
+      //   put: {
+      //     tags: ['User'],
+      //     parameters: [
+      //       {
+      //         name: 'email',
+      //         in: 'path',
+      //         description: 'The user email',
+      //         required: true,
+      //         schema: {
+      //           type: 'string',
+      //           required: true,
+      //           description: 'The user email'
+      //         }
+      //       },
+      //       {
+      //         name: 'password',
+      //         in: 'path',
+      //         description: 'The user password',
+      //         required: true,
+      //         schema: {
+      //           type: 'string',
+      //           required: true,
+      //           description: 'The user password'
+      //         }
+      //       }
+      //     ],
+      //     responses: {
+      //       200: {
+      //         description: 'User password reset successfully'
+      //       }
+      //     }
+      //   }
+      // },
 
-      '/users/check/{email}': {
-        get: {
-          tags: ['User'],
-          parameters: [
-            {
-              name: 'email',
-              in: 'path',
-              description: 'The user email',
-              required: true,
-              schema: {
-                type: 'string',
-                required: true,
+      // '/users/check/{email}': {
+      //   get: {
+      //     tags: ['User'],
+      //     parameters: [
+      //       {
+      //         name: 'email',
+      //         in: 'path',
+      //         description: 'The user email',
+      //         required: true,
+      //         schema: {
+      //           type: 'string',
+      //           required: true,
 
-                description: 'The user email'
-              }
-            }
-          ],
-          responses: {
-            200: {
-              description: 'User exists'
-            }
-          }
-        }
-      },
+      //           description: 'The user email'
+      //         }
+      //       }
+      //     ],
+      //     responses: {
+      //       200: {
+      //         description: 'User exists'
+      //       }
+      //     }
+      //   }
+      // },
 
       '/users/update/{id}': {
         put: {
@@ -162,7 +162,7 @@ const options = {
                   properties: {
                     name: {
                       type: 'string',
-                      example: 'Emilio Kariuki'
+                      example: 'Edwin Muhoro'
                     },
                     bio: {
                       type: 'string',
@@ -494,11 +494,11 @@ const options = {
                     },
                     seller_name: {
                       type: 'string',
-                      example: 'Emilio Kariuki'
+                      example: 'Edwin Muhoro'
                     },
                     seller_email: {
                       type: 'string',
-                      example: 'emilio113kariuki@gmail.com'
+                      example: 'eddiemuhoro@gmail.com'
                     },
                     seller_phone: {
                       type: 'string',
@@ -665,11 +665,11 @@ const options = {
                     },
                     seller_name: {
                       type: 'string',
-                      example: 'Emilio Kariuki'
+                      example: 'Edwin Muhoro'
                     },
                     seller_email: {
                       type: 'string',
-                      example: 'emili0113kariuki@gmail.com'
+                      example: 'emili0113Muhoro@gmail.com'
                     },
                     seller_phone: {
                       type: 'string',
@@ -877,193 +877,193 @@ const options = {
 
       //review routes
 
-      '/review/send': {
-        post: {
-          tags: ['Review'],
-          requestBody: {
-            required: true,
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    sender_name: {
-                      type: 'string',
-                      example: 'Emilio Kariuki'
-                    },
-                    sender_image: {
-                      type: 'string',
-                      example: 'https://res.cloudinary.com/dzcmadjl1/i'
-                    },
-                    sender_email: {
-                      type: 'string',
-                      example: 'emilio113kariuki@gmail.com'
-                    },
-                    user_id: {
-                      type: 'string',
-                      example: '1'
-                    },
-                    rating: {
-                      type: 'number',
-                      example: 5
-                    },
-                    comment: {
-                      type: 'string',
-                      example: 'Nice product'
-                    }
-                  }
-                }
-              }
-            }
-          },
-          responses: {
-            200: {
-              description: 'Review added successfully'
-            }
-          }
-        }
-      },
+      // '/review/send': {
+      //   post: {
+      //     tags: ['Review'],
+      //     requestBody: {
+      //       required: true,
+      //       content: {
+      //         'application/json': {
+      //           schema: {
+      //             type: 'object',
+      //             properties: {
+      //               sender_name: {
+      //                 type: 'string',
+      //                 example: 'Edwin Muhoro'
+      //               },
+      //               sender_image: {
+      //                 type: 'string',
+      //                 example: 'https://res.cloudinary.com/dzcmadjl1/i'
+      //               },
+      //               sender_email: {
+      //                 type: 'string',
+      //                 example: 'eddiemuhoro@gmail.com'
+      //               },
+      //               user_id: {
+      //                 type: 'string',
+      //                 example: '1'
+      //               },
+      //               rating: {
+      //                 type: 'number',
+      //                 example: 5
+      //               },
+      //               comment: {
+      //                 type: 'string',
+      //                 example: 'Nice product'
+      //               }
+      //             }
+      //           }
+      //         }
+      //       }
+      //     },
+      //     responses: {
+      //       200: {
+      //         description: 'Review added successfully'
+      //       }
+      //     }
+      //   }
+      // },
 
-      '/review/user/{id}': {
-        get: {
-          tags: ['Review'],
-          description: 'Get a review by product id',
-          parameters: [
-            {
-              name: 'id',
-              in: 'path',
-              description: 'The user id',
-              required: true,
-              schema: {
-                type: 'string',
-                required: true,
-                description: 'The user id'
-              }
-            }
-          ],
-          responses: {
-            200: {
-              description: 'User reviews'
-            }
-          }
-        }
-      },
+      // '/review/user/{id}': {
+      //   get: {
+      //     tags: ['Review'],
+      //     description: 'Get a review by product id',
+      //     parameters: [
+      //       {
+      //         name: 'id',
+      //         in: 'path',
+      //         description: 'The user id',
+      //         required: true,
+      //         schema: {
+      //           type: 'string',
+      //           required: true,
+      //           description: 'The user id'
+      //         }
+      //       }
+      //     ],
+      //     responses: {
+      //       200: {
+      //         description: 'User reviews'
+      //       }
+      //     }
+      //   }
+      // },
 
-      '/review/user/update/{id}': {
-        put: {
-          tags: ['Review'],
-          description: 'Update a review by id',
-          requestBody: {
-            required: false,
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    comment: {
-                      type: 'string',
-                      example: 'This is a nice product'
-                    },
-                    rating: {
-                      type: 'number',
-                      example: 5
-                    },
-                    user_id: {
-                      type: 'string',
-                      example: '1'
-                    }
-                  }
-                }
-              }
-            }
-          },
-          parameters: [
-            {
-              name: 'id',
-              in: 'path',
-              description: 'The review id',
-              required: true,
-              schema: {
-                type: 'string',
-                required: true,
-                description: 'The review id'
-              }
-            }
-          ],
-          responses: {
-            200: {
-              description: 'Review updated successfully'
-            }
-          }
-        }
-      },
+      // '/review/user/update/{id}': {
+      //   put: {
+      //     tags: ['Review'],
+      //     description: 'Update a review by id',
+      //     requestBody: {
+      //       required: false,
+      //       content: {
+      //         'application/json': {
+      //           schema: {
+      //             type: 'object',
+      //             properties: {
+      //               comment: {
+      //                 type: 'string',
+      //                 example: 'This is a nice product'
+      //               },
+      //               rating: {
+      //                 type: 'number',
+      //                 example: 5
+      //               },
+      //               user_id: {
+      //                 type: 'string',
+      //                 example: '1'
+      //               }
+      //             }
+      //           }
+      //         }
+      //       }
+      //     },
+      //     parameters: [
+      //       {
+      //         name: 'id',
+      //         in: 'path',
+      //         description: 'The review id',
+      //         required: true,
+      //         schema: {
+      //           type: 'string',
+      //           required: true,
+      //           description: 'The review id'
+      //         }
+      //       }
+      //     ],
+      //     responses: {
+      //       200: {
+      //         description: 'Review updated successfully'
+      //       }
+      //     }
+      //   }
+      // },
 
-      '/review/usella/send': {
-        post: {
-          tags: ['Review'],
-          description: 'Send a review to a usella founders',
-          requestBody: {
-            required: true,
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    comment: {
-                      type: 'string',
-                      example: 'Nice product'
-                    },
-                    rating: {
-                      type: 'number',
-                      example: 5
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
+      // '/review/usella/send': {
+      //   post: {
+      //     tags: ['Review'],
+      //     description: 'Send a review to a usella founders',
+      //     requestBody: {
+      //       required: true,
+      //       content: {
+      //         'application/json': {
+      //           schema: {
+      //             type: 'object',
+      //             properties: {
+      //               comment: {
+      //                 type: 'string',
+      //                 example: 'Nice product'
+      //               },
+      //               rating: {
+      //                 type: 'number',
+      //                 example: 5
+      //               }
+      //             }
+      //           }
+      //         }
+      //       }
+      //     }
+      //   }
+      // },
 
-      '/review/usella/delete/{id}': {
-        delete: {
-          tags: ['Review'],
-          description: 'Delete a review by user id',
-          parameters: [
-            {
-              name: 'id',
-              in: 'path',
-              description: 'The user id',
-              required: true,
-              schema: {
-                type: 'string',
-                required: true,
-                description: 'The user id'
-              }
-            }
-          ],
-          responses: {
-            200: {
-              description: 'Review deleted successfully'
-            },
-            404: {
-              description: 'Review not found'
-            }
-          }
-        }
-      },
+      // '/review/usella/delete/{id}': {
+      //   delete: {
+      //     tags: ['Review'],
+      //     description: 'Delete a review by user id',
+      //     parameters: [
+      //       {
+      //         name: 'id',
+      //         in: 'path',
+      //         description: 'The user id',
+      //         required: true,
+      //         schema: {
+      //           type: 'string',
+      //           required: true,
+      //           description: 'The user id'
+      //         }
+      //       }
+      //     ],
+      //     responses: {
+      //       200: {
+      //         description: 'Review deleted successfully'
+      //       },
+      //       404: {
+      //         description: 'Review not found'
+      //       }
+      //     }
+      //   }
+      // },
 
-      '/review/usella': {
-        get: {
-          tags: ['Review'],
-          description: 'Get all reviews',
-          responses: {
-            200: {
-              description: 'All reviews'
-            }
-          }
-        }
-      },
+      // '/review/usella': {
+      //   get: {
+      //     tags: ['Review'],
+      //     description: 'Get all reviews',
+      //     responses: {
+      //       200: {
+      //         description: 'All reviews'
+      //       }
+      //     }
+      //   }
+      // },
 
       //order routes
 
@@ -1181,11 +1181,11 @@ const options = {
                     },
                     buyer_email: {
                       type: 'string',
-                      example: 'emilio113kariuki@gmail.com'
+                      example: 'eddiemuhoro@gmail.com'
                     },
                     buyer_name: {
                       type: 'string',
-                      example: 'Emilio Kariuki'
+                      example: 'Edwin Muhoro'
                     },
                     product_id: {
                       type: 'string',
@@ -1501,17 +1501,17 @@ const options = {
         }
       },
 
-      '/mpesa/token': {
-        get: {
-          tags: ['Mpesa'],
-          description: 'Get Mpesa token',
-          responses: {
-            200: {
-              description: 'Mpesa token'
-            },
-          }
-        }
-      },
+      // '/mpesa/token': {
+      //   get: {
+      //     tags: ['Mpesa'],
+      //     description: 'Get Mpesa token',
+      //     responses: {
+      //       200: {
+      //         description: 'Mpesa token'
+      //       },
+      //     }
+      //   }
+      // },
 
       // '/mpesa/pay' : {
       //   post: {
