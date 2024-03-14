@@ -68,7 +68,7 @@ export const productPostedEmail = async (
                         href="www.google.com">help Center</a></h5>
                 <h5 style="font-weight:normal; font-size: 16px;">Please don’t forget to review Usella, which is providing
                     this awesome services! You can also encourage them through our <a
-                        href="https://twitter.com/EG_Kariuki">Twitter</a> page using the #Usella
+                        href="https://twitter.com/CodesEddie">Twitter</a> page using the #Usella
                     flag. Stay safe & stay healthy.</h5>
                 <img style="width:600px"
                     src="https://firebasestorage.googleapis.com/v0/b/apt-rite-346310.appspot.com/o/unnamed.png?alt=media&token=6f0bcfeb-f69c-4441-a404-e4abb1c3616c">
@@ -177,7 +177,7 @@ export const verifyEmail = async (
       
                   <h5 style="font-weight:normal; font-size: 16px;">Please don’t forget to review Usella, which is providing
                       this awesome services! You can also encourage them through our <a
-                          href="https://twitter.com/EG_Kariuki">Twitter</a> page using the #Usella
+                          href="https://twitter.com/CodesEddie">Twitter</a> page using the #Usella
                       flag. Stay safe & stay healthy.</h5>
                   <img style="width:600px"
                       src="https://firebasestorage.googleapis.com/v0/b/apt-rite-346310.appspot.com/o/unnamed.png?alt=media&token=6f0bcfeb-f69c-4441-a404-e4abb1c3616c">
@@ -460,7 +460,7 @@ export const orderCreatedEmail = async (
       
                   <h5 style="font-weight:normal; font-size: 16px;">Please don’t forget to review Usella, which is providing
                       this awesome services! You can also encourage them through our <a
-                          href="https://twitter.com/EG_Kariuki">Twitter</a> page using the #Usella
+                          href="https://twitter.com/CodesEddie">Twitter</a> page using the #Usella
                       flag. Stay safe & stay healthy.</h5>
                   <img style="width:600px"
                       src="https://firebasestorage.googleapis.com/v0/b/apt-rite-346310.appspot.com/o/unnamed.png?alt=media&token=6f0bcfeb-f69c-4441-a404-e4abb1c3616c">
@@ -572,7 +572,7 @@ export const orderConfirmEmail = async (
     
                 <h5 style="font-weight:normal; font-size: 16px;">Please don’t forget to review Usella, which is providing
                     this awesome services! You can also encourage them through our <a
-                        href="https://twitter.com/EG_Kariuki">Twitter</a> page using the #Usella
+                        href="https://twitter.com/CodesEddie">Twitter</a> page using the #Usella
                     flag. Stay safe & stay healthy.</h5>
                 <img style="width:600px"
                     src="https://firebasestorage.googleapis.com/v0/b/apt-rite-346310.appspot.com/o/unnamed.png?alt=media&token=6f0bcfeb-f69c-4441-a404-e4abb1c3616c">
@@ -690,7 +690,7 @@ export const orderDeliveredEmail = async (
       
                   <h5 style="font-weight:normal; font-size: 16px;">Please don’t forget to review Usella, which is providing
                       this awesome services! You can also encourage them through our <a
-                          href="https://twitter.com/EG_Kariuki">Twitter</a> page using the #Usella
+                          href="https://twitter.com/CodesEddie">Twitter</a> page using the #Usella
                       flag. Stay safe & stay healthy.</h5>
                   <img style="width:600px"
                       src="https://firebasestorage.googleapis.com/v0/b/apt-rite-346310.appspot.com/o/unnamed.png?alt=media&token=6f0bcfeb-f69c-4441-a404-e4abb1c3616c">
