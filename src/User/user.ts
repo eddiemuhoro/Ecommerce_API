@@ -35,6 +35,7 @@ export const register =
         },
         select: {
           id: true,
+          name: true,
           email: true
         }
       });
@@ -42,11 +43,14 @@ export const register =
       if (!user) {
         throw new Error('Registration failed');
       }
-      await verifyEmail(user.email, req.body.name, verificationCode);
+
+      
+
+      // await verifyEmail(user.email, req.body.name, verificationCode);
 
       res.status(200).json({
         message: 'user registered',
-        verification: 'Verification email sent',
+        // verification: 'Verification email sent',
         email: user.email
       });
     } catch (e: any) {
