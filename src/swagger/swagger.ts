@@ -245,88 +245,88 @@ const options = {
         }
       },
 
-      '/users/verify/social/{email}': {
-        put: {
-          tags: ['User'],
-          parameters: [
-            {
-              name: 'email',
-              in: 'path',
-              description: 'The user email',
-              required: true,
-              schema: {
-                type: 'string',
-                required: true,
-                description: 'The user email'
-              }
-            }
-          ],
-          responses: {
-            200: {
-              description: 'User verified successfully'
-            }
-          }
-        }
-      },
+      // '/users/verify/social/{email}': {
+      //   put: {
+      //     tags: ['User'],
+      //     parameters: [
+      //       {
+      //         name: 'email',
+      //         in: 'path',
+      //         description: 'The user email',
+      //         required: true,
+      //         schema: {
+      //           type: 'string',
+      //           required: true,
+      //           description: 'The user email'
+      //         }
+      //       }
+      //     ],
+      //     responses: {
+      //       200: {
+      //         description: 'User verified successfully'
+      //       }
+      //     }
+      //   }
+      // },
 
-      '/users/verify/{email}/{code}': {
-        put: {
-          tags: ['User'],
-          parameters: [
-            {
-              name: 'code',
-              in: 'path',
-              description: 'The verification code',
-              required: true,
-              schema: {
-                type: 'string',
-                required: true,
-                description: 'The verification code'
-              }
-            },
-            {
-              name: 'email',
-              in: 'path',
-              description: 'The user email',
-              required: true,
-              schema: {
-                type: 'string',
-                required: true,
-                description: 'The user email'
-              }
-            }
-          ],
-          responses: {
-            200: {
-              description: 'User verified successfully'
-            }
-          }
-        }
-      },
+      // '/users/verify/{email}/{code}': {
+      //   put: {
+      //     tags: ['User'],
+      //     parameters: [
+      //       {
+      //         name: 'code',
+      //         in: 'path',
+      //         description: 'The verification code',
+      //         required: true,
+      //         schema: {
+      //           type: 'string',
+      //           required: true,
+      //           description: 'The verification code'
+      //         }
+      //       },
+      //       {
+      //         name: 'email',
+      //         in: 'path',
+      //         description: 'The user email',
+      //         required: true,
+      //         schema: {
+      //           type: 'string',
+      //           required: true,
+      //           description: 'The user email'
+      //         }
+      //       }
+      //     ],
+      //     responses: {
+      //       200: {
+      //         description: 'User verified successfully'
+      //       }
+      //     }
+      //   }
+      // },
 
-      '/users/resend/code/{email}': {
-        get: {
-          tags: ['User'],
-          parameters: [
-            {
-              name: 'email',
-              in: 'path',
-              description: 'The user email',
-              required: true,
-              schema: {
-                type: 'string',
-                required: true,
-                description: 'The user email'
-              }
-            }
-          ],
-          responses: {
-            200: {
-              description: 'verification code sent successfully'
-            }
-          }
-        }
-      },
+      // '/users/resend/code/{email}': {
+      //   get: {
+      //     tags: ['User'],
+      //     parameters: [
+      //       {
+      //         name: 'email',
+      //         in: 'path',
+      //         description: 'The user email',
+      //         required: true,
+      //         schema: {
+      //           type: 'string',
+      //           required: true,
+      //           description: 'The user email'
+      //         }
+      //       }
+      //     ],
+      //     responses: {
+      //       200: {
+      //         description: 'verification code sent successfully'
+      //       }
+      //     }
+      //   }
+      // },
 
       '/users': {
         get: {

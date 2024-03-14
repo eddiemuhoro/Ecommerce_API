@@ -226,7 +226,7 @@ router.post(
 
       await prisma.cart.delete({
         where: {
-          id: product_id + buyer_id
+          id: product_id 
         }
       });
 
@@ -607,7 +607,7 @@ router.post(
     try {
       const product = await prisma.cart.create({
         data: {
-          id: req.body.product_id + req.body.buyer_id,
+          id: req.body.product_id,
           buyer_id: req.body.buyer_id
         }
       });
