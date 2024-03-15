@@ -22,7 +22,7 @@ const options = {
                   properties: {
                     email: {
                       type: 'string',
-                      example: 'eddiemuhoro@gmail.com'
+                      example: 'testemail@gmail.com'
                     },
                     password: {
                       type: 'string',
@@ -53,11 +53,11 @@ const options = {
                   properties: {
                     name: {
                       type: 'string',
-                      example: 'Edwin Muhoro'
+                      example: 'Test User'
                     },
                     email: {
                       type: 'string',
-                      example: 'eddiemuhoro@gmail.com'
+                      example: 'testemail@gmail.com'
                     },
 
                     password: {
@@ -162,7 +162,7 @@ const options = {
                   properties: {
                     name: {
                       type: 'string',
-                      example: 'Edwin Muhoro'
+                      example: 'Test User'
                     },
                     bio: {
                       type: 'string',
@@ -170,7 +170,7 @@ const options = {
                     },
                     phone: {
                       type: 'string',
-                      example: '0712345678'
+                      example: '44712345678'
                     },
                     profile_pic: {
                       type: 'string',
@@ -182,7 +182,7 @@ const options = {
                     },
                     location: {
                       type: 'string',
-                      example: 'Nairobi'
+                      example: 'Coventry'
                     }
                   }
                 }
@@ -494,19 +494,19 @@ const options = {
                     },
                     seller_name: {
                       type: 'string',
-                      example: 'Edwin Muhoro'
+                      example: 'Test User'
                     },
                     seller_email: {
                       type: 'string',
-                      example: 'eddiemuhoro@gmail.com'
+                      example: 'testemail@gmail.com'
                     },
                     seller_phone: {
                       type: 'string',
-                      example: '0712345678'
+                      example: '44712345678'
                     },
                     location: {
                       type: 'string',
-                      example: 'Nairobi'
+                      example: 'Coventry'
                     },
                     quantity: {
                       type: 'number',
@@ -665,7 +665,7 @@ const options = {
                     },
                     seller_name: {
                       type: 'string',
-                      example: 'Edwin Muhoro'
+                      example: 'Test User'
                     },
                     seller_email: {
                       type: 'string',
@@ -673,11 +673,11 @@ const options = {
                     },
                     seller_phone: {
                       type: 'string',
-                      example: '0712345678'
+                      example: '44712345678'
                     },
                     location: {
                       type: 'string',
-                      example: 'Nairobi'
+                      example: 'Coventry'
                     },
                     quantity: {
                       type: 'number',
@@ -889,7 +889,7 @@ const options = {
       //             properties: {
       //               sender_name: {
       //                 type: 'string',
-      //                 example: 'Edwin Muhoro'
+      //                 example: 'Test User'
       //               },
       //               sender_image: {
       //                 type: 'string',
@@ -897,7 +897,7 @@ const options = {
       //               },
       //               sender_email: {
       //                 type: 'string',
-      //                 example: 'eddiemuhoro@gmail.com'
+      //                 example: 'testemail@gmail.com'
       //               },
       //               user_id: {
       //                 type: 'string',
@@ -1181,11 +1181,11 @@ const options = {
                     },
                     buyer_email: {
                       type: 'string',
-                      example: 'eddiemuhoro@gmail.com'
+                      example: 'testemail@gmail.com'
                     },
                     buyer_name: {
                       type: 'string',
-                      example: 'Edwin Muhoro'
+                      example: 'Test User'
                     },
                     product_id: {
                       type: 'string',
@@ -1197,7 +1197,7 @@ const options = {
                     },
                     location: {
                       type: 'string',
-                      example: 'Nairobi'
+                      example: 'Coventry'
                     }
                   }
                 }
