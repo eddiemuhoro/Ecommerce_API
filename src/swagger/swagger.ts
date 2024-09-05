@@ -77,65 +77,65 @@ const options = {
         }
       },
 
-      // '/users/reset/password/{email}/{password}': {
-      //   put: {
-      //     tags: ['User'],
-      //     parameters: [
-      //       {
-      //         name: 'email',
-      //         in: 'path',
-      //         description: 'The user email',
-      //         required: true,
-      //         schema: {
-      //           type: 'string',
-      //           required: true,
-      //           description: 'The user email'
-      //         }
-      //       },
-      //       {
-      //         name: 'password',
-      //         in: 'path',
-      //         description: 'The user password',
-      //         required: true,
-      //         schema: {
-      //           type: 'string',
-      //           required: true,
-      //           description: 'The user password'
-      //         }
-      //       }
-      //     ],
-      //     responses: {
-      //       200: {
-      //         description: 'User password reset successfully'
-      //       }
-      //     }
-      //   }
-      // },
+      '/users/reset/password/{email}/{password}': {
+        put: {
+          tags: ['User'],
+          parameters: [
+            {
+              name: 'email',
+              in: 'path',
+              description: 'The user email',
+              required: true,
+              schema: {
+                type: 'string',
+                required: true,
+                description: 'The user email'
+              }
+            },
+            {
+              name: 'password',
+              in: 'path',
+              description: 'The user password',
+              required: true,
+              schema: {
+                type: 'string',
+                required: true,
+                description: 'The user password'
+              }
+            }
+          ],
+          responses: {
+            200: {
+              description: 'User password reset successfully'
+            }
+          }
+        }
+      },
 
-      // '/users/check/{email}': {
-      //   get: {
-      //     tags: ['User'],
-      //     parameters: [
-      //       {
-      //         name: 'email',
-      //         in: 'path',
-      //         description: 'The user email',
-      //         required: true,
-      //         schema: {
-      //           type: 'string',
-      //           required: true,
+      '/users/check/{email}': {
+        get: {
+          tags: ['User'],
+          parameters: [
+            {
+              name: 'email',
+              in: 'path',
+              description: 'The user email',
+              required: true,
+              schema: {
+                type: 'string',
+                required: true,
 
-      //           description: 'The user email'
-      //         }
-      //       }
-      //     ],
-      //     responses: {
-      //       200: {
-      //         description: 'User exists'
-      //       }
-      //     }
-      //   }
-      // },
+                description: 'The user email'
+              }
+            }
+          ],
+          responses: {
+            200: {
+              description: 'User exists'
+            }
+          }
+        }
+      },
 
       '/users/update/{id}': {
         put: {
@@ -245,88 +245,88 @@ const options = {
         }
       },
 
-      // '/users/verify/social/{email}': {
-      //   put: {
-      //     tags: ['User'],
-      //     parameters: [
-      //       {
-      //         name: 'email',
-      //         in: 'path',
-      //         description: 'The user email',
-      //         required: true,
-      //         schema: {
-      //           type: 'string',
-      //           required: true,
-      //           description: 'The user email'
-      //         }
-      //       }
-      //     ],
-      //     responses: {
-      //       200: {
-      //         description: 'User verified successfully'
-      //       }
-      //     }
-      //   }
-      // },
+      '/users/verify/social/{email}': {
+        put: {
+          tags: ['User'],
+          parameters: [
+            {
+              name: 'email',
+              in: 'path',
+              description: 'The user email',
+              required: true,
+              schema: {
+                type: 'string',
+                required: true,
+                description: 'The user email'
+              }
+            }
+          ],
+          responses: {
+            200: {
+              description: 'User verified successfully'
+            }
+          }
+        }
+      },
 
-      // '/users/verify/{email}/{code}': {
-      //   put: {
-      //     tags: ['User'],
-      //     parameters: [
-      //       {
-      //         name: 'code',
-      //         in: 'path',
-      //         description: 'The verification code',
-      //         required: true,
-      //         schema: {
-      //           type: 'string',
-      //           required: true,
-      //           description: 'The verification code'
-      //         }
-      //       },
-      //       {
-      //         name: 'email',
-      //         in: 'path',
-      //         description: 'The user email',
-      //         required: true,
-      //         schema: {
-      //           type: 'string',
-      //           required: true,
-      //           description: 'The user email'
-      //         }
-      //       }
-      //     ],
-      //     responses: {
-      //       200: {
-      //         description: 'User verified successfully'
-      //       }
-      //     }
-      //   }
-      // },
+      '/users/verify/{email}/{code}': {
+        put: {
+          tags: ['User'],
+          parameters: [
+            {
+              name: 'code',
+              in: 'path',
+              description: 'The verification code',
+              required: true,
+              schema: {
+                type: 'string',
+                required: true,
+                description: 'The verification code'
+              }
+            },
+            {
+              name: 'email',
+              in: 'path',
+              description: 'The user email',
+              required: true,
+              schema: {
+                type: 'string',
+                required: true,
+                description: 'The user email'
+              }
+            }
+          ],
+          responses: {
+            200: {
+              description: 'User verified successfully'
+            }
+          }
+        }
+      },
 
-      // '/users/resend/code/{email}': {
-      //   get: {
-      //     tags: ['User'],
-      //     parameters: [
-      //       {
-      //         name: 'email',
-      //         in: 'path',
-      //         description: 'The user email',
-      //         required: true,
-      //         schema: {
-      //           type: 'string',
-      //           required: true,
-      //           description: 'The user email'
-      //         }
-      //       }
-      //     ],
-      //     responses: {
-      //       200: {
-      //         description: 'verification code sent successfully'
-      //       }
-      //     }
-      //   }
-      // },
+      '/users/resend/code/{email}': {
+        get: {
+          tags: ['User'],
+          parameters: [
+            {
+              name: 'email',
+              in: 'path',
+              description: 'The user email',
+              required: true,
+              schema: {
+                type: 'string',
+                required: true,
+                description: 'The user email'
+              }
+            }
+          ],
+          responses: {
+            200: {
+              description: 'verification code sent successfully'
+            }
+          }
+        }
+      },
 
       '/users': {
         get: {
@@ -464,12 +464,12 @@ const options = {
                       type: 'string',
                       example: 'Iphone 12'
                     },
-                    
+
                     description: {
                       type: 'string',
                       example: 'Iphone 12 pro max'
                     },
-                   
+
                     price: {
                       type: 'number',
                       example: '100000'
@@ -528,7 +528,7 @@ const options = {
       '/product': {
         get: {
           tags: ['Product'],
-          parameters:[
+          parameters: [
             {
               name: 'name',
               in: 'query',
@@ -561,7 +561,7 @@ const options = {
                 required: false,
                 description: 'The product location'
               }
-            },
+            }
           ],
           responses: {
             200: {
@@ -877,193 +877,193 @@ const options = {
 
       //review routes
 
-      // '/review/send': {
-      //   post: {
-      //     tags: ['Review'],
-      //     requestBody: {
-      //       required: true,
-      //       content: {
-      //         'application/json': {
-      //           schema: {
-      //             type: 'object',
-      //             properties: {
-      //               sender_name: {
-      //                 type: 'string',
-      //                 example: 'Test User'
-      //               },
-      //               sender_image: {
-      //                 type: 'string',
-      //                 example: 'https://res.cloudinary.com/dzcmadjl1/i'
-      //               },
-      //               sender_email: {
-      //                 type: 'string',
-      //                 example: 'testemail@gmail.com'
-      //               },
-      //               user_id: {
-      //                 type: 'string',
-      //                 example: '1'
-      //               },
-      //               rating: {
-      //                 type: 'number',
-      //                 example: 5
-      //               },
-      //               comment: {
-      //                 type: 'string',
-      //                 example: 'Nice product'
-      //               }
-      //             }
-      //           }
-      //         }
-      //       }
-      //     },
-      //     responses: {
-      //       200: {
-      //         description: 'Review added successfully'
-      //       }
-      //     }
-      //   }
-      // },
+      '/review/send': {
+        post: {
+          tags: ['Review'],
+          requestBody: {
+            required: true,
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    sender_name: {
+                      type: 'string',
+                      example: 'Test User'
+                    },
+                    sender_image: {
+                      type: 'string',
+                      example: 'https://res.cloudinary.com/dzcmadjl1/i'
+                    },
+                    sender_email: {
+                      type: 'string',
+                      example: 'testemail@gmail.com'
+                    },
+                    user_id: {
+                      type: 'string',
+                      example: '1'
+                    },
+                    rating: {
+                      type: 'number',
+                      example: 5
+                    },
+                    comment: {
+                      type: 'string',
+                      example: 'Nice product'
+                    }
+                  }
+                }
+              }
+            }
+          },
+          responses: {
+            200: {
+              description: 'Review added successfully'
+            }
+          }
+        }
+      },
 
-      // '/review/user/{id}': {
-      //   get: {
-      //     tags: ['Review'],
-      //     description: 'Get a review by product id',
-      //     parameters: [
-      //       {
-      //         name: 'id',
-      //         in: 'path',
-      //         description: 'The user id',
-      //         required: true,
-      //         schema: {
-      //           type: 'string',
-      //           required: true,
-      //           description: 'The user id'
-      //         }
-      //       }
-      //     ],
-      //     responses: {
-      //       200: {
-      //         description: 'User reviews'
-      //       }
-      //     }
-      //   }
-      // },
+      '/review/user/{id}': {
+        get: {
+          tags: ['Review'],
+          description: 'Get a review by product id',
+          parameters: [
+            {
+              name: 'id',
+              in: 'path',
+              description: 'The user id',
+              required: true,
+              schema: {
+                type: 'string',
+                required: true,
+                description: 'The user id'
+              }
+            }
+          ],
+          responses: {
+            200: {
+              description: 'User reviews'
+            }
+          }
+        }
+      },
 
-      // '/review/user/update/{id}': {
-      //   put: {
-      //     tags: ['Review'],
-      //     description: 'Update a review by id',
-      //     requestBody: {
-      //       required: false,
-      //       content: {
-      //         'application/json': {
-      //           schema: {
-      //             type: 'object',
-      //             properties: {
-      //               comment: {
-      //                 type: 'string',
-      //                 example: 'This is a nice product'
-      //               },
-      //               rating: {
-      //                 type: 'number',
-      //                 example: 5
-      //               },
-      //               user_id: {
-      //                 type: 'string',
-      //                 example: '1'
-      //               }
-      //             }
-      //           }
-      //         }
-      //       }
-      //     },
-      //     parameters: [
-      //       {
-      //         name: 'id',
-      //         in: 'path',
-      //         description: 'The review id',
-      //         required: true,
-      //         schema: {
-      //           type: 'string',
-      //           required: true,
-      //           description: 'The review id'
-      //         }
-      //       }
-      //     ],
-      //     responses: {
-      //       200: {
-      //         description: 'Review updated successfully'
-      //       }
-      //     }
-      //   }
-      // },
+      '/review/user/update/{id}': {
+        put: {
+          tags: ['Review'],
+          description: 'Update a review by id',
+          requestBody: {
+            required: false,
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    comment: {
+                      type: 'string',
+                      example: 'This is a nice product'
+                    },
+                    rating: {
+                      type: 'number',
+                      example: 5
+                    },
+                    user_id: {
+                      type: 'string',
+                      example: '1'
+                    }
+                  }
+                }
+              }
+            }
+          },
+          parameters: [
+            {
+              name: 'id',
+              in: 'path',
+              description: 'The review id',
+              required: true,
+              schema: {
+                type: 'string',
+                required: true,
+                description: 'The review id'
+              }
+            }
+          ],
+          responses: {
+            200: {
+              description: 'Review updated successfully'
+            }
+          }
+        }
+      },
 
-      // '/review/usella/send': {
-      //   post: {
-      //     tags: ['Review'],
-      //     description: 'Send a review to a usella founders',
-      //     requestBody: {
-      //       required: true,
-      //       content: {
-      //         'application/json': {
-      //           schema: {
-      //             type: 'object',
-      //             properties: {
-      //               comment: {
-      //                 type: 'string',
-      //                 example: 'Nice product'
-      //               },
-      //               rating: {
-      //                 type: 'number',
-      //                 example: 5
-      //               }
-      //             }
-      //           }
-      //         }
-      //       }
-      //     }
-      //   }
-      // },
+      '/review/usella/send': {
+        post: {
+          tags: ['Review'],
+          description: 'Send a review to a usella founders',
+          requestBody: {
+            required: true,
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    comment: {
+                      type: 'string',
+                      example: 'Nice product'
+                    },
+                    rating: {
+                      type: 'number',
+                      example: 5
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
 
-      // '/review/usella/delete/{id}': {
-      //   delete: {
-      //     tags: ['Review'],
-      //     description: 'Delete a review by user id',
-      //     parameters: [
-      //       {
-      //         name: 'id',
-      //         in: 'path',
-      //         description: 'The user id',
-      //         required: true,
-      //         schema: {
-      //           type: 'string',
-      //           required: true,
-      //           description: 'The user id'
-      //         }
-      //       }
-      //     ],
-      //     responses: {
-      //       200: {
-      //         description: 'Review deleted successfully'
-      //       },
-      //       404: {
-      //         description: 'Review not found'
-      //       }
-      //     }
-      //   }
-      // },
+      '/review/usella/delete/{id}': {
+        delete: {
+          tags: ['Review'],
+          description: 'Delete a review by user id',
+          parameters: [
+            {
+              name: 'id',
+              in: 'path',
+              description: 'The user id',
+              required: true,
+              schema: {
+                type: 'string',
+                required: true,
+                description: 'The user id'
+              }
+            }
+          ],
+          responses: {
+            200: {
+              description: 'Review deleted successfully'
+            },
+            404: {
+              description: 'Review not found'
+            }
+          }
+        }
+      },
 
-      // '/review/usella': {
-      //   get: {
-      //     tags: ['Review'],
-      //     description: 'Get all reviews',
-      //     responses: {
-      //       200: {
-      //         description: 'All reviews'
-      //       }
-      //     }
-      //   }
-      // },
+      '/review/usella': {
+        get: {
+          tags: ['Review'],
+          description: 'Get all reviews',
+          responses: {
+            200: {
+              description: 'All reviews'
+            }
+          }
+        }
+      },
 
       //order routes
 
@@ -1398,8 +1398,7 @@ const options = {
                     phone: {
                       type: 'string',
                       example: '796250443'
-                    },
-                    
+                    }
                   }
                 }
               }
@@ -1410,12 +1409,12 @@ const options = {
               in: 'header',
               name: 'Authorization',
               type: String,
-              description: "The access token",
+              description: 'The access token',
               required: true,
               schema: {
                 type: 'string',
-                description: "The access token",
-                format: "Bearer {token}"
+                description: 'The access token',
+                format: 'Bearer {token}'
               }
             },
             {
@@ -1501,49 +1500,54 @@ const options = {
         }
       },
 
-      // '/mpesa/token': {
-      //   get: {
-      //     tags: ['Mpesa'],
-      //     description: 'Get Mpesa token',
-      //     responses: {
-      //       200: {
-      //         description: 'Mpesa token'
-      //       },
-      //     }
-      //   }
-      // },
+      '/mpesa/token': {
+        get: {
+          tags: ['Mpesa'],
+          description: 'Get Mpesa token',
+          responses: {
+            200: {
+              description: 'Mpesa token'
+            }
+          }
+        }
+      },
 
-      // '/mpesa/pay' : {
-      //   post: {
-      //     tags: ['Mpesa'],
-      //     description: 'Pay for an order',
-      //     parameters: [
-      //       {
-      //         name: 'amount',
-      //         in: 'query',
-      //         description: "The order's amount",
-      //         required: true,
-      //         schema: {
-      //           type: 'amount',
-      //           description: "The order's amount"
-      //         },
-      //       },
-      //       { 
-      //         name: 'phone',
-      //         in: 'query',
-      //         description: "The user's phone number",
-      //         required: true,
-      //         schema: {
-      //           type: 'phone',
-      //           description: "The user's phone number"
-      //         },
-      //       },
-      //       {
-
-
-
-        // }
-      // }
+      '/mpesa/pay': {
+        post: {
+          tags: ['Mpesa'],
+          description: 'Pay for an order',
+          parameters: [
+            {
+              name: 'amount',
+              in: 'query',
+              description: "The order's amount",
+              required: true,
+              schema: {
+                type: 'amount',
+                description: "The order's amount"
+              }
+            },
+            {
+              name: 'phone',
+              in: 'query',
+              description: "The user's phone number",
+              required: true,
+              schema: {
+                type: 'phone',
+                description: "The user's phone number"
+              }
+            }
+          ],
+          responses: {
+            200: {
+              description: 'payment made successfully'
+            },
+            500: {
+              description: 'payment has not been made'
+            }
+          }
+        }
+      }
     }
   },
   apis: ['./src/**/*.ts']
