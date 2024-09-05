@@ -11,7 +11,7 @@ import reviewRouter from './Review/review.js';
 import { follow, unFollow } from './Followers/followers.js';
 import orderRouter from './order/order.js';
 import MpesaRouter from './Mpesa/mpesa.js';
-import {payment, callBackUrl} from './Mpesa/mpesa.js';
+import { payment, callBackUrl } from './Mpesa/mpesa.js';
 export const app = express();
 
 const port = process.env.PORT || 4200;
@@ -56,7 +56,6 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/mpesa', MpesaRouter);
 app.use('/pay/callback', callBackUrl);
 app.use('/pay', payment);
-
 
 // app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 

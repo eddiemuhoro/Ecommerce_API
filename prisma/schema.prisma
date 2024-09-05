@@ -8,22 +8,22 @@ generator client {
 }
 
 model user {
-  id            String     @id @default(auto()) @map("_id") @db.ObjectId
+  id            String         @id @default(auto()) @map("_id") @db.ObjectId
   name          String
-  email         String     @unique
-  phone         String     @default("")
+  email         String         @unique
+  phone         String         @default("")
   password      String
   product       product[]
   review        review[]
   code          String
-  isVerified    Boolean    @default(true)
-  bio           String     @default("")
-  profile_pic   String     @default("")
-  cover_pic     String     @default("")
-  location      String     @default("")
+  isVerified    Boolean        @default(true)
+  bio           String         @default("")
+  profile_pic   String         @default("")
+  cover_pic     String         @default("")
+  location      String         @default("")
   usellaReviews usellaReviews?
-  followers     follow[]   @relation("followers")
-  following     follow[]   @relation("following")
+  followers     follow[]       @relation("followers")
+  following     follow[]       @relation("following")
   order         order[]
   history       history[]
   cart          cart[]
@@ -31,11 +31,11 @@ model user {
 }
 
 model follow {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  followerId  String   @db.ObjectId
-  followingId String    @db.ObjectId
-  follower    user     @relation("followers", fields: [followerId], references: [id])
-  following   user     @relation("following", fields: [followingId], references: [id])
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  followerId  String @db.ObjectId
+  followingId String @db.ObjectId
+  follower    user   @relation("followers", fields: [followerId], references: [id])
+  following   user   @relation("following", fields: [followingId], references: [id])
 
   // Additional constraint to ensure that follower and following are different
 
@@ -55,7 +55,7 @@ model product {
   location     String
   description  String
   images       String[]
-  seller_id    String @db.ObjectId
+  seller_id    String   @db.ObjectId
   seller_email String
   seller_phone String   @default("")
   seller_name  String
@@ -66,23 +66,23 @@ model product {
 }
 
 model cart {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   buyer_id String @db.ObjectId
-  buyer    user     @relation(fields: [buyer_id], references: [id])
+  buyer    user   @relation(fields: [buyer_id], references: [id])
 }
 
 model favourite {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   buyer_id String @db.ObjectId
-  buyer    user     @relation(fields: [buyer_id], references: [id])
+  buyer    user   @relation(fields: [buyer_id], references: [id])
 }
 
 model order {
   id            String        @id @default(auto()) @map("_id") @db.ObjectId
-  buyer_id      String @db.ObjectId
+  buyer_id      String        @db.ObjectId
   buyer         user          @relation(fields: [buyer_id], references: [id])
   order_status  OrderStatus   @default(PENDING)
-  product_id    String @db.ObjectId
+  product_id    String        @db.ObjectId
   seller_id     String
   quantity      Int
   price         Int
@@ -100,21 +100,21 @@ model payment {
 }
 
 model review {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
   sender_name  String
   sender_image String
   user_id      String @db.ObjectId
   rating       Int
   comment      String
   sender_email String
-  user         user     @relation(fields: [user_id], references: [id])
+  user         user   @relation(fields: [user_id], references: [id])
 }
 
 model usellaReviews {
   id      String @id @default(auto()) @map("_id") @db.ObjectId
   rating  Int
   comment String
-  user    user     @relation(fields: [id], references: [id])
+  user    user   @relation(fields: [id], references: [id])
 }
 
 model history {
@@ -126,7 +126,7 @@ model history {
   location     String
   description  String
   images       String[]
-  belongsTo    String @db.ObjectId
+  belongsTo    String   @db.ObjectId
   seller_id    String
   seller_email String
   seller_phone String   @default("")
