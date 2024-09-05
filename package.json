@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node src/index.ts",
-    "start": "node dist/index.js",
+    "start": "nodemon dist/index.js",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "lint": "eslint 'src/**/*.ts' --fix",
     "postinstall": "prisma generate",
@@ -21,6 +21,7 @@
     "@prisma/client": "^4.8.0",
     "@types/express-validator": "^3.0.0",
     "@types/jest": "^29.5.0",
+    "axios": "^1.7.7",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "daraja.js": "^1.0.2",
