@@ -1504,9 +1504,13 @@ const options = {
         get: {
           tags: ['Mpesa'],
           description: 'Get Mpesa token',
+          parameters: [],
           responses: {
             200: {
               description: 'Mpesa token'
+            },
+            500: {
+              description: 'Could not get token'
             }
           }
         }
