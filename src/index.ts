@@ -54,8 +54,8 @@ app.use('/unfollow', unFollow);
 app.use('/order', orderRouter);
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/mpesa', MpesaRouter);
-app.use('/pay/callback', callBackUrl);
 app.use('/pay', payment);
+app.use('/pay/callback', callBackUrl);
 
 // app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
