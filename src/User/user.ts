@@ -4,6 +4,8 @@ import { prisma } from '../db.js';
 import bcrypt from 'bcrypt';
 import { Request, Response, Router } from 'express';
 import { verifyEmail } from '../Mailer/productMail.js';
+import jwt from 'jsonwebtoken';
+import { verifyToken } from '../middleware/verifyToken.js';
 //* register user
 
 const router = Router();
@@ -44,10 +46,6 @@ export const register =
         throw new Error('Registration failed');
       }
 
-      
-
-      // await verifyEmail(user.email, req.body.name, verificationCode);
-
       res.status(200).json({
         message: 'user registered',
         // verification: 'Verification email sent',
@@ -86,11 +84,28 @@ export const login =
         throw new Error('User not verfied');
       }
 
+      let token;
+      try {
+        token = jwt.sign(
+          {
+            id: user.id,
+            email: user.email
+          },
+          'secret',
+          {
+            expiresIn: '1h'
+          }
+        );
+      } catch (error) {
+        console.error(error);
+      }
+
       res.status(200).json({
         id: user!.id,
         name: user!.name,
         email: user!.email,
-        phone: user!.phone
+        phone: user!.phone,
+        token: token
       });
     } catch (e: any) {
       res.status(500).json({ message: e.message });
@@ -318,7 +333,7 @@ router.get('/following/:id', async (req: Request, res: Response) => {
   }
 });
 
-router.get('/', async (_req: Request, res: Response) => {
+router.get('/', verifyToken, async (_req: Request, res: Response) => {
   try {
     const users = await prisma.user.findMany({
       select: {

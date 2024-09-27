@@ -8,6 +8,20 @@ const options = {
       version: '1.0.0',
       description: 'welcome to shop, where send hand good has value'
     },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT'
+        }
+      }
+    },
+    security: [
+      {
+        bearerAuth: [] // Apply globally (or you can apply it to specific paths)
+      }
+    ],
     paths: {
       // Users routes
       '/login': {
@@ -72,11 +86,32 @@ const options = {
           responses: {
             200: {
               description: 'User registered successfully'
+            },
+            500: {
+              description: 'User not registered'
             }
           }
         }
       },
-
+      '/users': {
+        get: {
+          tags: ['User'],
+          security: [
+            {
+              bearerAuth: []
+            }
+          ],
+          responses: {
+            200: {
+              description:
+                'A list of users currently registered in the database'
+            },
+            401: {
+              description: 'Headers missing or invalid token'
+            }
+          }
+        }
+      },
       '/users/reset/password/{email}/{password}': {
         put: {
           tags: ['User'],
@@ -328,17 +363,6 @@ const options = {
         }
       },
 
-      '/users': {
-        get: {
-          tags: ['User'],
-          responses: {
-            200: {
-              description:
-                'A list of users currently registered in the database'
-            }
-          }
-        }
-      },
       '/users/{id}': {
         get: {
           tags: ['User'],
