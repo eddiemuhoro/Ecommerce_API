@@ -9,22 +9,21 @@ const router = Router();
 //* fetch all the products
 
 router.get('/', async (req: Request, res: Response) => {
-  const {name,price,location} = req.query as any;
+  const { name, price, location } = req.query as any;
   try {
     const product = await prisma.product.findMany({
       where: {
         status: 'AVAILABLE',
-        name:{
-          contains: name,
+        name: {
+          contains: name
         },
         price: {
           lte: price
         },
         location: {
           contains: location
-        },
-
-      } 
+        }
+      }
     });
 
     if (!product) {
@@ -87,7 +86,7 @@ router.get(
       const product = await prisma.product.findMany({
         where: {
           category: category,
-          status: "AVAILABLE"
+          status: 'AVAILABLE'
         }
       });
 
@@ -115,6 +114,7 @@ router.post(
   body('seller_email').isString(),
   body('seller_phone').isString(),
   body('seller_name').isString(),
+  // verifyToken,
   handleErrors,
   async (req: Request, res: Response) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -143,9 +143,6 @@ router.post(
     }
   }
 );
-
-
-
 
 //* delete a specific product by id
 
@@ -208,7 +205,6 @@ router.put('/update/:id', async (req: Request, res: Response) => {
   }
 });
 
-
 router.post(
   '/add/favourite',
   body('product_id').isString(),
@@ -240,7 +236,7 @@ router.get('/fetch/favourite/:id', async (req: Request, res: Response) => {
         buyer_id: req.params.id
       },
       select: {
-        id: true,
+        id: true
       }
     });
 
@@ -258,9 +254,7 @@ router.get('/fetch/favourite/:id', async (req: Request, res: Response) => {
       product.push(item);
     }
 
-    res.json(
-      product
-    );
+    res.json(product);
   } catch (e: any) {
     res.status(500).json({ message: e.message });
   }
@@ -283,6 +277,5 @@ router.delete('/delete/favourite/:id', async (req: Request, res: Response) => {
     res.status(500).json({ message: e.message });
   }
 });
-
 
 export default router;
