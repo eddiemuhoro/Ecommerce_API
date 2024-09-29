@@ -1,6 +1,7 @@
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
@@ -8,7 +9,7 @@ generator client {
 }
 
 model user {
-  id            String         @id @default(auto()) @map("_id") @db.ObjectId
+  id            String         @id @default(uuid()) @db.Uuid
   name          String
   email         String         @unique
   phone         String         @default("")
@@ -31,23 +32,19 @@ model user {
 }
 
 model follow {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
-  followerId  String @db.ObjectId
-  followingId String @db.ObjectId
+  id          String @id @default(uuid()) @db.Uuid
+  followerId  String @db.Uuid
+  followingId String @db.Uuid
   follower    user   @relation("followers", fields: [followerId], references: [id])
   following   user   @relation("following", fields: [followingId], references: [id])
 
-  // Additional constraint to ensure that follower and following are different
-
-  // Additional constraints to ensure uniqueness of follower-following pairs
   @@unique([followerId, followingId])
-  @@unique([followingId, followerId])
   @@index([followerId])
   @@index([followingId])
 }
 
 model product {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  id           String   @id @default(uuid()) @db.Uuid
   name         String
   quantity     Int
   category     Category @default(OTHERS)
@@ -55,7 +52,7 @@ model product {
   location     String
   description  String
   images       String[]
-  seller_id    String   @db.ObjectId
+  seller_id    String   @db.Uuid
   seller_email String
   seller_phone String   @default("")
   seller_name  String
@@ -66,23 +63,23 @@ model product {
 }
 
 model cart {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  buyer_id String @db.ObjectId
+  id       String @id @default(uuid()) @db.Uuid
+  buyer_id String @db.Uuid
   buyer    user   @relation(fields: [buyer_id], references: [id])
 }
 
 model favourite {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  buyer_id String @db.ObjectId
+  id       String @id @default(uuid()) @db.Uuid
+  buyer_id String @db.Uuid
   buyer    user   @relation(fields: [buyer_id], references: [id])
 }
 
 model order {
-  id            String        @id @default(auto()) @map("_id") @db.ObjectId
-  buyer_id      String        @db.ObjectId
+  id            String        @id @default(uuid()) @db.Uuid
+  buyer_id      String        @db.Uuid
   buyer         user          @relation(fields: [buyer_id], references: [id])
   order_status  OrderStatus   @default(PENDING)
-  product_id    String        @db.ObjectId
+  product_id    String        @db.Uuid
   seller_id     String
   quantity      Int
   price         Int
@@ -92,7 +89,7 @@ model order {
 }
 
 model payment {
-  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  id              String   @id @default(uuid()) @db.Uuid
   phone           BigInt
   amount          Int
   transactionDate BigInt
@@ -100,10 +97,10 @@ model payment {
 }
 
 model review {
-  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  id           String @id @default(uuid()) @db.Uuid
   sender_name  String
   sender_image String
-  user_id      String @db.ObjectId
+  user_id      String @db.Uuid
   rating       Int
   comment      String
   sender_email String
@@ -111,14 +108,14 @@ model review {
 }
 
 model usellaReviews {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  id      String @id @default(uuid()) @db.Uuid
   rating  Int
   comment String
   user    user   @relation(fields: [id], references: [id])
 }
 
 model history {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  id           String   @id @default(uuid()) @db.Uuid
   name         String
   quantity     Int
   category     Category @default(OTHERS)
@@ -126,7 +123,7 @@ model history {
   location     String
   description  String
   images       String[]
-  belongsTo    String   @db.ObjectId
+  belongsTo    String   @db.Uuid
   seller_id    String
   seller_email String
   seller_phone String   @default("")
