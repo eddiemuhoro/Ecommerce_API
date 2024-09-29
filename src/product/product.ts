@@ -127,12 +127,12 @@ router.post(
       if (!product) {
         res.status(500).json({ message: 'cannot create product' });
       }
-      await productPostedEmail(
-        req.body.seller_email,
-        req.body.seller_name,
-        req.body.name,
-        product.images[0]
-      );
+      // await productPostedEmail(
+      //   req.body.seller_email,
+      //   req.body.seller_name,
+      //   req.body.name,
+      //   product.images[0]
+      // );
       res.json({
         product: product,
         message: 'product created successfully',
