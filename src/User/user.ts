@@ -282,7 +282,7 @@ router.get('/followers/:id', async (req: Request, res: Response) => {
     const users = await prisma.user.findMany({
       where: {
         id: {
-          in: followers.map((follower) => follower.followerId)
+          in: followers.map((follower: any) => follower.followerId)
         }
       },
       select: {
@@ -314,7 +314,7 @@ router.get('/following/:id', async (req: Request, res: Response) => {
     const users = await prisma.user.findMany({
       where: {
         id: {
-          in: following.map((follower) => follower.followingId)
+          in: following.map((follower: any) => follower.followingId)
         }
       },
       select: {
