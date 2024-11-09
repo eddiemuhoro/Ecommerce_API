@@ -7,6 +7,8 @@ ENV email=usellacompany@gmail.com \
 
 RUN npm install -g pnpm
 
+COPY package*.json ./
+
 WORKDIR /app
 
 COPY . .
