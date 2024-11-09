@@ -3,7 +3,7 @@ FROM node:18-alpine
 ENV email=usellacompany@gmail.com \
     password=lhqnekuevquucqfr \
     DATABASE_URL=postgresql://postgres://dtnyikoh:0kVTCSqbwKEWZgTRu9AA2Hhk-rGcFuqV@ziggy.db.elephantsql.com/dtnyikoh \
-    PORT=3000
+    PORT=4200
 
 RUN npm install -g pnpm
 
@@ -17,7 +17,7 @@ RUN pnpm install
 
 RUN pnpm build
 
-EXPOSE 3000
+EXPOSE 4200
 
 CMD ["pnpm", "start"]
 
