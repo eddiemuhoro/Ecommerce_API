@@ -2,7 +2,6 @@ import { body } from 'express-validator';
 import { prisma } from '../db.js';
 import { Request, Response, Router } from 'express';
 import { handleErrors } from '../middleware/handleErrors.js';
-import { productPostedEmail } from '../Mailer/productMail.js';
 
 const router = Router();
 
