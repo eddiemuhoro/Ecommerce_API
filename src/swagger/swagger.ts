@@ -1544,34 +1544,36 @@ const options = {
         post: {
           tags: ['Mpesa'],
           description: 'Pay for an order',
-          parameters: [
-            {
-              name: 'amount',
-              in: 'query',
-              description: "The order's amount",
-              required: true,
-              schema: {
-                type: 'amount',
-                description: "The order's amount"
-              }
-            },
-            {
-              name: 'phone',
-              in: 'query',
-              description: "The user's phone number",
-              required: true,
-              schema: {
-                type: 'phone',
-                description: "The user's phone number"
+          requestBody: {
+            // Move parameters into requestBody
+            required: true,
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    amount: {
+                      type: 'number',
+                      description: "The order's amount",
+                      example: 100
+                    },
+                    phone: {
+                      type: 'string',
+                      description: "The user's phone number",
+                      example: '712345678'
+                    }
+                  },
+                  required: ['amount', 'phone']
+                }
               }
             }
-          ],
+          },
           responses: {
             200: {
-              description: 'payment made successfully'
+              description: 'Payment made successfully'
             },
             500: {
-              description: 'payment has not been made'
+              description: 'Payment has not been made'
             }
           }
         }
