@@ -7,32 +7,6 @@ import { prisma } from '../db.js';
 
 const router = Router();
 
-router.post('/callback', async (req: Request, res: Response) => {
-  try {
-    const callbackBody = req.body;
-
-    if (!callbackBody.Body.stkCallback.CallbackMetadata) {
-      console.log(callbackBody.Body);
-    }
-
-    console.log(callbackBody.Body.stkCallback.CallbackMetadata);
-
-    await prisma.payment.create({
-      data: {
-        id: callbackBody.Body.stkCallback.CallbackMetadata.Item[1].Value,
-        amount: callbackBody.Body.stkCallback.CallbackMetadata.Item[0].Value,
-        phone: callbackBody.Body.stkCallback.CallbackMetadata.Item[4].Value,
-        transactionDate:
-          callbackBody.Body.stkCallback.CallbackMetadata.Item[3].Value
-      }
-    });
-    res.json({ message: 'success' });
-  } catch (e: any) {
-    console.log(e.message);
-    res.status(500).json({ message: e.message });
-  }
-});
-
 export const callBackUrl = async (req: Request, res: Response) => {
   try {
     const callbackBody = req.body;
@@ -40,9 +14,7 @@ export const callBackUrl = async (req: Request, res: Response) => {
     if (!callbackBody.Body.stkCallback.CallbackMetadata) {
       console.log(callbackBody.Body);
     }
-
-    console.log(callbackBody.Body.stkCallback.CallbackMetadata);
-
+    console.log('here is my data', callbackBody.Body.stkCallback);
     await prisma.payment.create({
       data: {
         id: callbackBody.Body.stkCallback.CallbackMetadata.Item[1].Value,
@@ -104,6 +76,8 @@ export const payment = async (req: Request, res: Response) => {
       TransactionDesc: 'Testing stk push'
     };
 
+    console.log(data);
+
     await axios
       .post(url, data, {
         headers: {
@@ -111,8 +85,7 @@ export const payment = async (req: Request, res: Response) => {
         }
       })
       .then((data) => {
-        console.log(data);
-        res.json(data.data);
+        res.json(data);
       })
       .catch((err) => {
         console.log(err);
@@ -129,24 +102,14 @@ const generateToken = async (req: Request, res: Response, next: any) => {
     const key = process.env.APP_KEY;
     const auth = Buffer.from(key + ':' + secret).toString('base64');
 
-    const token = await axios
-      .get(
-        'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials',
-        {
-          headers: {
-            Authorization: `Basic ${auth}`
-          }
+    const token = await axios.get(
+      'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials',
+      {
+        headers: {
+          Authorization: `Basic ${auth}`
         }
-      )
-      .then((data) => {
-        console.log(data);
-        res.json(data.data);
-        return data;
-      })
-      .catch((err) => {
-        console.log(err);
-        throw new Error(err.message);
-      });
+      }
+    );
 
     if (!token) {
       throw new Error('Could not get token');
@@ -206,8 +169,8 @@ router.post(
         PartyB: 174379,
         PhoneNumber: `254${phone}`,
         CallBackURL: 'https://shpp-backend.onrender.com/callback',
-        AccountReference: 'Mpesa Test',
-        TransactionDesc: 'Testing stk push'
+        AccountReference: 'Edwin',
+        TransactionDesc: 'Testing stk push by Edwin'
       };
 
       await axios
@@ -217,7 +180,6 @@ router.post(
           }
         })
         .then((data) => {
-          console.log(data);
           res.json(data.data);
         })
         .catch((err) => {
@@ -226,6 +188,7 @@ router.post(
         });
     } catch (e: any) {
       res.status(500).json({ message: e.message });
+      return;
     }
   }
 );
